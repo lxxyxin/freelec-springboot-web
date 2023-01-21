@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostsApiController {
     private final PostsService postsService;
 
-    @PutMapping("/api/v1/posts")
+    @PostMapping("/api/v1/posts") //PutMapping - > PostMapping 으로 수정
+    //test failed 이슈로 수정했는데 무슨 차이인지 잘 모르겠음
     public Long save(@RequestBody PostsSaveRequestDto requestDto){
         return postsService.save(requestDto);
     }
